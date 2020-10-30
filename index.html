@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <header class="col-sm-12">
+            <h1>Ajax</h1>
+        </header>
+    </div>
+</div>
+<div class="container-fluid main">
+    <div class="row">
+
+        <aside class="col-sm-4 menu">
+            <button type="button" class="btn btn-primary showMenu">Navigacija</button>
+        </aside>
+
+        <section class="col-sm-8 content">
+            <h2>Mokinių sąrašas</h2>
+            <div class="mokiniai">
+
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <footer class="footer navbar-fixed-bottom">
+        </footer>
+    </div>
+</div>
+
+<section>
+    <label for="miestai">Iveskite miesta:</label>
+    <input list="miestai" name="browser" id="browser">
+    <datalist id="miestai">
+        <option value="Edge">
+    </datalist>
+</section>
+
+
+
+
+<script src="js/app.js"></script>
+<!--<script src="js/mokiniai.js"></script>-->
+<script src="js/miestai.js"></script>
+</body>
+</html>
