@@ -5,54 +5,73 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/8edf85e373.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
 
 </head>
 <body>
 
-<div class="container-fluid">
-    <div class="row">
-        <header class="col-sm-12">
-            <h1>Ajax</h1>
+<div class="container">
+    <div class="row jumbotron bg-info text-white text-center">
+        <header class="col mb-3">
+            <h1><i class="fas fa-wind"></i> Orų prognozė Lietuvos miestams
+            </h1>
         </header>
     </div>
 </div>
-<div class="container-fluid main">
+<div class="container main">
     <div class="row">
+        <section class="col-md-4 content">
+            <div class="form-group mt-5">
+                <label for="browser">Miestas:</label>
+                <input list="miestai" name="browser" id="browser" class="form-control">
+                <datalist id="miestai">
 
-        <aside class="col-sm-4 menu">
-            <button type="button" class="btn btn-primary showMenu">Navigacija</button>
-        </aside>
+                </datalist>
+            </div>
+            <div id="mapid" class="img-fluid" style="height: 300px;">
+            </div>
 
-        <section class="col-sm-8 content">
-            <h2>Mokinių sąrašas</h2>
-            <div class="mokiniai">
+        </section>
+        <section class="col-md-8 content">
+            <h3 class="mb-5">Oru prognozė šiai dienai</h3>
+            <div class="orai">
+                <table class="table">
+                    <thead class="small">
+                    <tr>
+                        <th scope="col">Laikas</th>
+                        <th scope="col">Debesuotumas</th>
+                        <th scope="col">Temperatūra, C</th>
+                        <th scope="col">Vėjo greitis, m/s</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
+                    </tbody>
+                </table>
             </div>
         </section>
-
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
+<div class="container small">
+    <div class="row p-3">
         <footer class="footer navbar-fixed-bottom">
+            <p>| Ajax practice - api.meteo.lt | 2020-10-30 | Darius.Pavolis |</p>
         </footer>
     </div>
 </div>
 
-<section>
-    <label for="miestai">Iveskite miesta:</label>
-    <input list="miestai" name="browser" id="browser">
-    <datalist id="miestai">
-        <option value="Edge">
-    </datalist>
-</section>
-
-
-
-
-<script src="js/app.js"></script>
+<!--<script src="js/app.js"></script>-->
 <!--<script src="js/mokiniai.js"></script>-->
 <script src="js/miestai.js"></script>
+<script src="js/prognoze.js"></script>
 </body>
 </html>

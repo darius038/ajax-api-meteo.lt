@@ -1,22 +1,23 @@
-var xhr = new XMLHttpRequest();
+let xhr = new XMLHttpRequest();
 
 xhr.open("GET", "https://api.meteo.lt/v1/places", true);
 
-var sarasas;
-xhr.onreadystatechange = function () { // callback f-ja
+xhr.onreadystatechange = function () {
+
     if (this.readyState === 4) {
         var miestai = JSON.parse(xhr.responseText);
 
-        console.log(miestai);
+        let dataList = document.querySelector('datalist');
 
         for (let i = 0; i < miestai.length; i++) {
 
-            sarasas += '<option value="'+miestai[i].name+'">';
-
+            //sukuriamas tag <option>
+            let miestas = document.createElement('option');
+            //<option> atributui "value" priskiriamas miesto pavadinimas
+            miestas.value=miestai[i].name;
+            //prie dataList objekto pridedamas <option>
+            dataList.appendChild(miestas);
         }
-        console.log(sarasas);
-        document.querySelector('datalist').innerHTML = sarasas;
-
     }
 };
 
